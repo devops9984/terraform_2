@@ -12,6 +12,7 @@ resource "aws_vpc" "terraform_vpc" {
 resource "aws_subnet" "web_subnet" {
   vpc_id     = aws_vpc.terraform_vpc.id
   cidr_block = "10.0.1.0/24"
+  map_public_ip_on_launch = "true"
 
   tags = {
     Name = "Main"
@@ -22,6 +23,8 @@ resource "aws_subnet" "web_subnet" {
 resource "aws_subnet" "api_subnet" {
   vpc_id     = aws_vpc.terraform_vpc.id
   cidr_block = "10.0.2.0/24"
+  map_public_ip_on_launch = "true"
+
 
   tags = {
     Name = "Main"
