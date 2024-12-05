@@ -69,10 +69,7 @@ resource "aws_route_table" "public_route" {
 resource "aws_route_table" "private_route" {
   vpc_id = aws_vpc.terraform_vpc.id
 
-  route {
-    cidr_block = "10.0.0.0/16"
-    gateway_id = aws_internet_gateway.terraform_IG.id
-  }
+
   tags = {
     Name = "private_route"
   }
